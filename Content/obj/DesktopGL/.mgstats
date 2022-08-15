@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/lombres/OneDrive/CS/learnxna/Content/ball.png","/home/lombres/OneDrive/CS/learnxna/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.1522363
+"/home/lombres/OneDrive/CS/learnxna/Content/debug.spritefont","/home/lombres/OneDrive/CS/learnxna/Content/bin/DesktopGL/debug.xnb","FontDescriptionProcessor","SpriteFontContent",2010,21535,0.2287397

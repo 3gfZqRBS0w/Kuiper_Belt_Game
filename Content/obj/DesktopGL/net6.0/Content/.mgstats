@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Content/ball.png","/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.2143856
+"/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Content/debug.spritefont","/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Content/bin/DesktopGL/Content/debug.xnb","FontDescriptionProcessor","SpriteFontContent",2010,21535,0.1028664
