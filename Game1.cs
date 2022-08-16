@@ -1,12 +1,9 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
 using learnmonogame.interfaces;
 using learnmonogame.entities;
 using learnmonogame.drawing;
-
 using System;
 using System.Collections.Generic;
 
@@ -30,17 +27,19 @@ public class Game1 : Game
     #endregion
 
     #region gamecomponents
-    private Label _titleOfGame;
 
     private Label _scoreOfGame;
+    private Label _numberOfDie ;
+
     private List<Component> _gameComponents;
+    private List<Component> _topHud ; 
     #endregion
 
     #region trucutile 
+    public Score scoreboard = new Score() ; 
     public static int screenWidth, screenHeight;
     public bool _OnMenu = true;
     public static Random rand = new Random();
-    public static int score = 0;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private static SpriteFont _debugFont;
@@ -72,34 +71,60 @@ public class Game1 : Game
         _debugFont = Content.Load<SpriteFont>("debug");
 
 
-        _titleOfGame = new Label("Kuiper Belt Game", _debugFont, Color.White, new Vector2(10.0f, 10.0f)) ;
-        _scoreOfGame = new Label("Score : " + Projectile.score, _debugFont, Color.White, new Vector2(0f, 0f)) ;
+      
+        _scoreOfGame = new Label(_debugFont, Color.White, new Vector2(0f, 0f)) ;
+        _numberOfDie = new Label(_debugFont, Color.White, new Vector2(screenWidth/2, 0f)) ;
+
+
 
         screenWidth = GraphicsDevice.Viewport.Width;
         screenHeight = GraphicsDevice.Viewport.Height;
 
         #region definebutton
-        var newGameButton = new Button(Surface.DrawRect(ref _spriteBatch, 128, 32, Color.Blue), Content.Load<SpriteFont>("debug"))
+
+        var titleScreen = new Button(Surface.DrawRect(ref _spriteBatch, 180, 32, Color.Yellow), Content.Load<SpriteFont>("debug"))
+        {
+            Position = new Vector2(0, 0),
+            Text = "Kuiper Belt Game",
+        };
+
+        var newGameButton = new Button(Surface.DrawRect(ref _spriteBatch, 180, 32, Color.Blue), Content.Load<SpriteFont>("debug"))
         {
             Position = new Vector2(0, 100),
             Text = "New Game",
         };
 
-        newGameButton.Click += newGameButton_Click;
+        var scoreboardButton = new Button(Surface.DrawRect(ref _spriteBatch, 180, 32, Color.Blue), Content.Load<SpriteFont>("debug")) {
+            Position = new Vector2(0,150),
+            Text = "Scoreboard",
+        };
 
-        var quitButton = new Button(Surface.DrawRect(ref _spriteBatch, 128, 32, Color.Blue), Content.Load<SpriteFont>("debug"))
+        var settingButton = new Button(Surface.DrawRect(ref _spriteBatch, 180, 32, Color.Blue), Content.Load<SpriteFont>("debug")) {
+            Position = new Vector2(0,200),
+            Text = "Setting",
+        };
+
+        var quitButton = new Button(Surface.DrawRect(ref _spriteBatch, 180, 32, Color.Blue), Content.Load<SpriteFont>("debug"))
         {
-            Position = new Vector2(0, 150),
+            Position = new Vector2(0, 250),
             Text = "Quit",
         };
 
+        // Les événements
+
+        newGameButton.Click += newGameButton_Click;
         quitButton.Click += QuitButton_Click;
 
         _gameComponents = new List<Component>()
       {
+        titleScreen,
         newGameButton,
+        settingButton,
+        scoreboardButton,
         quitButton,
       };
+
+
         #endregion
 
 
@@ -130,7 +155,7 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
-        Console.WriteLine("le score est "+Projectile.score) ; 
+        //Console.WriteLine("le score est "+Projectile.score) ; 
 
 
         var kstate = Keyboard.GetState();
@@ -150,7 +175,11 @@ public class Game1 : Game
             {
                 if (_localPlayer1.Collision(projectile))
                 {
+                    scoreboard.addScore(Projectile.score);
+                    scoreboard.getFullScore();
+
                     _OnMenu = true;
+
                     projectiles.Clear();
                     for (int i = 0; i < _nbOfProjectiles; i++)
                     {
@@ -202,15 +231,11 @@ public class Game1 : Game
                 {
                     rocket.Update(gameTime, _spriteBatch);
                 }
-
             }
-
-
         }
         else
         {
-            foreach (var component in _gameComponents)
-                component.Update(gameTime, _spriteBatch);
+            foreach (var component in _gameComponents) component.Update(gameTime, _spriteBatch);
         }
 
 
@@ -223,12 +248,8 @@ public class Game1 : Game
         {
             GraphicsDevice.Clear(Color.Red);
             _spriteBatch.Begin();
-            //_spriteBatch.DrawString(_debugFont, "Kuiper Belt Game A0.1", new Vector2(screenWidth / 2 - 100, 0), Color.White);
-
-            _titleOfGame.Draw(gameTime, _spriteBatch);
             
-            foreach (var component in _gameComponents)
-                component.Draw(gameTime, _spriteBatch);
+            foreach (var component in _gameComponents) component.Draw(gameTime, _spriteBatch);
 
             _spriteBatch.End();
         }
@@ -236,8 +257,9 @@ public class Game1 : Game
         {
             GraphicsDevice.Clear(Color.Black);
             _spriteBatch.Begin();
-            //_scoreOfGame.Draw(gameTime, _spriteBatch);
-            _spriteBatch.DrawString(_debugFont,"Score : "+Projectile.score , new Vector2(0f, 0f), Color.White) ; 
+            _scoreOfGame.DrawScore("Score : "+ Projectile.score,gameTime, _spriteBatch);
+            _numberOfDie.DrawScore("Nombre de Mort : " + scoreboard.getNumberOfDie(),gameTime, _spriteBatch); 
+            //_spriteBatch.DrawString(_debugFont,"Score : "+Projectile.score , new Vector2(0f, 0f), Color.White) ;
         
             _spriteBatch.Draw(_localPlayer1.Texture, _localPlayer1.position, Color.White);
 

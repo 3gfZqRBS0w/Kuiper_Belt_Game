@@ -18,8 +18,7 @@ namespace learnmonogame.interfaces
     private SpriteFont _font;
     private  Color _col ;
 
-    public Label(string text, SpriteFont font, Color col, Vector2 pos) {
-      _text = text; 
+    public Label(SpriteFont font, Color col, Vector2 pos) {
       _position = pos;
       _col = col;
       _font = font ;
@@ -28,6 +27,9 @@ namespace learnmonogame.interfaces
       spriteBatch.DrawString(_font, _text, _position, _col) ;    
     }
 
+    public void DrawScore(string str, GameTime gameTime, SpriteBatch spriteBatch) {
+      spriteBatch.DrawString(_font, str, _position, _col) ;
+    }
     public override void Update(GameTime gameTime, SpriteBatch spriteBatch) {
 
     }
