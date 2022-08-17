@@ -53,3 +53,5 @@
 /home/lombres/OneDrive/CS/Kuiper_Belt_Game/obj/Debug/net6.0/ref/learnmonogame.dll
 /home/lombres/OneDrive/CS/Kuiper_Belt_Game/bin/Debug/net6.0/ref/learnmonogame.dll
 /home/lombres/OneDrive/CS/Kuiper_Belt_Game/bin/Debug/net6.0/DeviceId.dll
+/home/lombres/OneDrive/CS/Kuiper_Belt_Game/bin/Debug/net6.0/Content/stage1.ogg
+/home/lombres/OneDrive/CS/Kuiper_Belt_Game/bin/Debug/net6.0/Content/stage1.xnb

@@ -23,10 +23,13 @@ namespace learnmonogame.interfaces
       _col = col;
       _font = font ;
     }
+
+    // for static text 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
       spriteBatch.DrawString(_font, _text, _position, _col) ;    
     }
 
+    // for dynamic text
     public void DrawScore(string str, GameTime gameTime, SpriteBatch spriteBatch) {
       spriteBatch.DrawString(_font, str, _position, _col) ;
     }
