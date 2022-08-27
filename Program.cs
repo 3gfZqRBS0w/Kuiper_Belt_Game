@@ -1,6 +1,6 @@
 ﻿
 
 
-using var game = new learnmonogame.Game1();
+using var game = new kuiperbeltgame.Game1();
 game.Run();
 

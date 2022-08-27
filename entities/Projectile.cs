@@ -8,10 +8,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 // les classes 
-using learnmonogame.entities;
-using learnmonogame.drawing;
+using kuiperbeltgame.entities;
+using kuiperbeltgame.drawing;
 
-namespace learnmonogame.entities
+namespace kuiperbeltgame.entities
 {
     public class Projectile : Entity
     {

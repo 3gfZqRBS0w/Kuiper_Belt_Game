@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace learnmonogame.drawing {
+namespace kuiperbeltgame.drawing {
     public static class Surface {
         public static Texture2D DrawRect(ref SpriteBatch graphics,int width, int height, Color col) {
 

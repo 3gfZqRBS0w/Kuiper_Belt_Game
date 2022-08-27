@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QXcP8p+NRpez4ECV6WsiiHWvX0V2qEc1ak5i2/zjWBUauLneAK0DwhmMR9hD26xubsE5G07WKo0bGKikZjfuaA==",
+  "dgSpecHash": "RVlTDmBP//O0bXgY7AEj4NX8rUrcN9FRxElT8BLxYfvyL2mbOsuxForVKsWuYhd/bcQEBkyquD2BcEQEVwJzPw==",
   "success": true,
-  "projectFilePath": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/learnmonogame.csproj",
+  "projectFilePath": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Kuiper Belt Game.csproj",
   "expectedPackageFiles": [
     "/home/lombres/.nuget/packages/deviceid/6.2.0/deviceid.6.2.0.nupkg.sha512",
     "/home/lombres/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",

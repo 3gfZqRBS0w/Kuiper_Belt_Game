@@ -2,14 +2,14 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using learnmonogame.interfaces;
-using learnmonogame.entities;
-using learnmonogame.drawing;
+using kuiperbeltgame.interfaces;
+using kuiperbeltgame.entities;
+using kuiperbeltgame.drawing;
 using System;
 using System.Collections.Generic;
 
 
-namespace learnmonogame.entities
+namespace kuiperbeltgame.entities
 {
     public class Rocket : Entity
     {

@@ -2,13 +2,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using learnmonogame.interfaces;
-using learnmonogame.entities;
-using learnmonogame.drawing;
+using kuiperbeltgame.interfaces;
+using kuiperbeltgame.entities;
+using kuiperbeltgame.drawing;
 using System;
 using System.Collections.Generic;
 
-namespace learnmonogame.interfaces
+namespace kuiperbeltgame.interfaces
 {
   public class Label : Component 
   {
@@ -18,7 +18,8 @@ namespace learnmonogame.interfaces
     private SpriteFont _font;
     private  Color _col ;
 
-    public Label(SpriteFont font, Color col, Vector2 pos) {
+    public Label(string text, SpriteFont font, Color col, Vector2 pos) {
+      _text = text ; 
       _position = pos;
       _col = col;
       _font = font ;

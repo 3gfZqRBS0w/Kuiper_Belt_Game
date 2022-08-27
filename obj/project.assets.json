@@ -138,9 +138,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/learnmonogame.csproj",
-      "projectName": "learnmonogame",
-      "projectPath": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/learnmonogame.csproj",
+      "projectUniqueName": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Kuiper Belt Game.csproj",
+      "projectName": "Kuiper Belt Game",
+      "projectPath": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/Kuiper Belt Game.csproj",
       "packagesPath": "/home/lombres/.nuget/packages/",
       "outputPath": "/home/lombres/OneDrive/CS/Kuiper_Belt_Game/obj/",
       "projectStyle": "PackageReference",
