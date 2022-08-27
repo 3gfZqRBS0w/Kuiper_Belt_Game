@@ -32,7 +32,7 @@ public class Game1 : Game
 
     #region hudcomponents
     private Label _scoreOfGame;
-    private Label _numberOfDie ;
+    private Label _numberOfDeaths ;
     private Label _highScore;
     #endregion 
 
@@ -88,7 +88,7 @@ public class Game1 : Game
         scoreboard.LoadContent(debugFont, _spriteBatch);
     
         _scoreOfGame = new Label("Score Label",debugFont, Color.White, new Vector2(0f, 0f)) ;
-        _numberOfDie = new Label("Die Label", debugFont, Color.White, new Vector2(screenWidth-200, 0f)) ;
+        _numberOfDeaths = new Label("Death Label", debugFont, Color.White, new Vector2(screenWidth-250, 0f)) ;
         _highScore = new Label("High Score Label", debugFont, Color.White, new Vector2(screenWidth/2-100, 0f)) ;
 
 
@@ -97,7 +97,7 @@ public class Game1 : Game
         var titleScreen = new Button(Surface.DrawRect(ref _spriteBatch, screenWidth, 32, Color.White), debugFont,0)
         {
             Position = new Vector2(0, 0),
-            Text = "Kuiper Belt Game A0.1.5",
+            Text = "Kuiper Belt Game A0.2.1",
         };
 
         var newGameButton = new Button(Surface.DrawRect(ref _spriteBatch, 180, 32, Color.White), debugFont,1)
@@ -131,7 +131,7 @@ public class Game1 : Game
         var returnButton = new Button(Surface.DrawRect(ref _spriteBatch, Game1.screenWidth, 32, Color.White), debugFont,0)
         {
             Position = new Vector2(0, Game1.screenHeight-32),
-            Text = "Return Menu",
+            Text = "Back to main menu",
         };
 
         // Les événements
@@ -311,7 +311,7 @@ public class Game1 : Game
 
             // Draw HUD 
             _scoreOfGame.DrawScore("Score : "+ Projectile.score,gameTime, _spriteBatch);
-            _numberOfDie.DrawScore("Number of Die  : " + scoreboard.getNumberOfDie(),gameTime, _spriteBatch);
+            _numberOfDeaths.DrawScore("Number of deaths  : " + scoreboard.getNumberOfDie(),gameTime, _spriteBatch);
             _highScore.DrawScore("High Score : "+ scoreboard.getHighScore(),gameTime, _spriteBatch);
         
             _spriteBatch.Draw(_localPlayer1.Texture, _localPlayer1.position, Color.White);
