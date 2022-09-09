@@ -104,7 +104,7 @@ namespace kuiperbeltgame.interfaces
       */
       string[] nameOfColumns = new string[] { "RANK", "SCORE", "DATE" };
        
-      string resultat = "TOTAL SCORE RANKING\n" ;
+      string resultat = "TOTAL SCORE RANKING"+Environment.NewLine ;
       string[] obj ; 
       int i = 0 ;
 
@@ -116,7 +116,7 @@ namespace kuiperbeltgame.interfaces
       }
 
       foreach( var item in scoreLists.scores) {
-        resultat += "\n" ;
+        resultat += Environment.NewLine ;
         obj = new string[] {(i+1).ToString(),item.Score.ToString(),item.Date.ToString("MM/dd/yyyy (h:mm pp)") } ; 
 
 
